@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <simple-table :tableData="tableData" :columnData="columnData"></simple-table>
+    <common-table :tableData="tableData" :columnData="columnData"></common-table>
   </div>
 </template>
 
 <script>
-import simpleTable from './components/table.vue'
+import commonTable from './components/table.vue'
 export default {
   name: 'app',
   components: {
-    simpleTable
+    commonTable
   },
   data () {
     return {
@@ -83,7 +83,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
