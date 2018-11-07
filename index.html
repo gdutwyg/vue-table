@@ -10,9 +10,13 @@
 
 <body>
   <script src="./node_modules/vue/dist/vue.js"></script>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="./dist/commonTable.umd.js"></script>
   <div id="app">
-    <common-table :tableData="tableData" :columnData="columnData"></common-table>
+    <common-table :table-data="tableData" :column-data="columnData"></common-table>
   </div>
 </body>
 <script>
