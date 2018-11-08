@@ -1,4 +1,4 @@
-# vColorPicker
+# vue-pagination-table
 
 > 基于element-ui 2次封装的table + 分页 组件
 
@@ -22,7 +22,7 @@ Vue.use(ElementUI)
 Vue.use(vueTable)
 ```
 
-在项目中使用 vueTable
+在项目中使用 vue-pagination-table
 
 ```js
 <template>
