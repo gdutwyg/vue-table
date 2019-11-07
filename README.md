@@ -53,7 +53,7 @@ Vue.use(vueTable)
         columnData: [
           {
             prop: 'date', // 对应tableData的date
-            label: '日期', // 表头
+            label: '日期', // 表头标题
             sortable: true // 是否可排序
           },
           {

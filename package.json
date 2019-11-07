@@ -1,6 +1,6 @@
 {
   "name": "vue-pagination-table",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "wyg",
   "main": "dist/commonTable.umd.min.js",
   "private": false,
