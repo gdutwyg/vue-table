@@ -76,15 +76,9 @@ export default {
 <style scoped lang="less">
 .common-table {
   width: 100%;
-  h3 {
-    font-weight: normal;
-  }
   .el-pagination {
     float: right;
     margin-top: 20px;
-  }
-  .el-date-editor {
-    margin: 0 10px 10px 0;
   }
 }
 </style>

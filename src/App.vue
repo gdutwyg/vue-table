@@ -82,7 +82,7 @@ export default {
           label: '地址'
         }
       ],
-      tableHeight: 1000
+      tableHeight: 600
     }
   },
   methods: {
