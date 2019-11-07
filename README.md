@@ -26,7 +26,12 @@ Vue.use(vueTable)
 
 ```js
 <template>
-  <common-table :tableData="tableData" :columnData="columnData"></common-table>
+  <common-table
+  :tableData="tableData"
+  :columnData="columnData"
+  @clickTable="clickTable"
+  :height="tableHeight"
+></common-table>
 </template>
 <script>
   export default {
@@ -47,8 +52,9 @@ Vue.use(vueTable)
         }],
         columnData: [
           {
-            prop: 'date',
-            label: '日期'
+            prop: 'date', // 对应tableData的date
+            label: '日期', // 表头
+            sortable: true // 是否可排序
           },
           {
             prop: 'name',
@@ -58,7 +64,14 @@ Vue.use(vueTable)
             prop: 'address',
             label: '地址'
           }
-        ]
+        ],
+        tableHeight: 1000   // 单位是px
+      }
+    },
+    methods: {
+      // 点击table的事件
+      clickTable (data) {
+        console.log(data)
       }
     }
   }
@@ -67,5 +80,5 @@ Vue.use(vueTable)
 
 ## 特点
 1. 简单易用，table + 分页 的整合
-2. 提供以 npm 的形式安装提供全局组件
-3. ...
+2. 提供以 npm 的形式安装提供全局组件，
+3. 大家如果还有其它想加的需求，欢迎提issue

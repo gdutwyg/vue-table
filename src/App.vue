@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <common-table :tableData="tableData" :columnData="columnData"></common-table>
+    <common-table
+      :tableData="tableData"
+      :columnData="columnData"
+      @clickTable="clickTable"
+      :height="tableHeight"
+    ></common-table>
   </div>
 </template>
 
@@ -65,7 +70,8 @@ export default {
       columnData: [
         {
           prop: 'date',
-          label: '日期'
+          label: '日期',
+          sortable: true
         },
         {
           prop: 'name',
@@ -75,7 +81,14 @@ export default {
           prop: 'address',
           label: '地址'
         }
-      ]
+      ],
+      tableHeight: 1000
+    }
+  },
+  methods: {
+    // 点击table
+    clickTable (data) {
+      console.log(data)
     }
   }
 }

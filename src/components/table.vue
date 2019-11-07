@@ -1,19 +1,13 @@
 <template>
   <div class="common-table">
-    <el-table
-      :data="showTableData"
-      height='600'
-      stripe
-      border
-      @row-click="clickTable"
-      >
+    <el-table :data="showTableData" :height="height" stripe border @row-click="clickTable">
       <el-table-column
         v-for="(item, index) in columnData"
         :key="index"
         :prop="item.prop"
         :label="item.label"
-        sortable>
-      </el-table-column>
+        :sortable="item.sortable"
+      ></el-table-column>
     </el-table>
     <el-pagination
       background
@@ -21,9 +15,9 @@
       @current-change="handleCurrentChange"
       :page-sizes="[10, 20, 30, 40]"
       :page-size="pageSize"
-      layout="sizes, prev, pager, next"
-      :total="tableData.length">
-    </el-pagination>
+      layout="sizes, prev, pager, next, total"
+      :total="tableData.length"
+    ></el-pagination>
   </div>
 </template>
 <script>
@@ -41,6 +35,10 @@ export default {
       default: () => {
         return []
       }
+    },
+    height: {
+      type: Number,
+      default: 600
     }
   },
   watch: {
@@ -67,7 +65,7 @@ export default {
       this.showTableData = this.tableData.slice(currentPage, currentPage + this.pageSize)
     },
     clickTable (row) {
-      this.$emit('clickTable', row.cid, row.title)
+      this.$emit('clickTable', row)
     }
   },
   created () {
@@ -77,12 +75,12 @@ export default {
 </script>
 <style scoped lang="less">
 .common-table {
-  width: 50%;
-  float: left;
+  width: 100%;
   h3 {
     font-weight: normal;
   }
   .el-pagination {
+    float: right;
     margin-top: 20px;
   }
   .el-date-editor {
